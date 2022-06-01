@@ -13,8 +13,8 @@ class Solution:
             else:
                 dic_s[digit] -= 1
                 
-        for key in dic_s:
-            if dic_s[key] > 0:
+        for key, value in dic_s.items():
+            if value > 0:
                 return False
         
         return True
