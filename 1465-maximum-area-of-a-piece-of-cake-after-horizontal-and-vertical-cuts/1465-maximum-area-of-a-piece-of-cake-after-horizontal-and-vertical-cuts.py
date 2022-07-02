@@ -6,20 +6,7 @@ class Solution:
         verticalCuts.append(w)
         
         curr_horizon = 0
-        curr_vertical = 0
-#         max_area = 0
-        
-#         for i in horizontalCuts:
-#             curr_vertical = 0
-#             for j in verticalCuts:
-#                 area = (i - curr_horizon) * (j - curr_vertical)
-#                 if area >= h * w / 2:
-#                     return area % (10**9 + 7)
-#                 max_area = max(max_area, area)
-#                 curr_vertical = j
-#             curr_horizon = i
-#         return max_area % (10**9 + 7)
-    
+        curr_vertical = 0    
         
         max_height = 0
         for i in horizontalCuts:
