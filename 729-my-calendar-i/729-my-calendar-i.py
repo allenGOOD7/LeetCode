@@ -1,13 +1,13 @@
 class MyCalendar:
 
     def __init__(self):
-        self.eventDates = []
+        self.booking = []
 
     def book(self, start: int, end: int) -> bool:
-        for laststart,lastend in self.eventDates:
-            if laststart < end and start < lastend: # means there is overlapping
-                return False # so we can return False
-        self.eventDates.append((start,end))
+        for laststart, lastend in self.booking:
+            if laststart < end and start < lastend: 
+                return False
+        self.booking.append((start,end))
         return True
 
 # Your MyCalendar object will be instantiated and called as such:
