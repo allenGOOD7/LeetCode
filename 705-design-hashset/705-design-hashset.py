@@ -1,7 +1,7 @@
 class MyHashSet:
 
     def __init__(self):
-        self.set = [False] * 10000000
+        self.set = [False] * (1000000 + 1)
 
     def add(self, key: int) -> None:
         self.set[key] = True
