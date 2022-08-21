@@ -10,17 +10,15 @@ class Node:
 
 class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
-        if not root:
-            return
-        queue = [root]
-        while queue:
-            curr = queue.pop(0)
-            if curr and curr.left:
-                curr.left.next = curr.right
-                if curr.next:
-                    curr.right.next = curr.next.left
-                queue.append(curr.left)
-                queue.append(curr.right)
-        return root
+        p = root
+        while root and root.left:
+            next = root.left
+            while root:
+                root.left.next = root.right
+                if root.next:
+                    root.right.next = root.next.left
+                root = root.next
+            root = next
+        return p
             
                 
