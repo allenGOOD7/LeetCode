@@ -12,7 +12,7 @@ class Solution:
     def connect(self, root: 'Node') -> 'Node':
         origin = root
         while root:
-            cur = temp = Node(0)
+            cur = level = Node(0)
             while root:
                 if root.left:
                     cur.next = root.left
@@ -21,5 +21,5 @@ class Solution:
                     cur.next = root.right
                     cur = root.right
                 root = root.next
-            root = temp.next
+            root = level.next
         return origin
