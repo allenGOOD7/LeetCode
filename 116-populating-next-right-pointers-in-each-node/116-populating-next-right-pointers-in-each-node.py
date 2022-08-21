@@ -10,7 +10,7 @@ class Node:
 
 class Solution:
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
-        p = root
+        origin = root
         while root and root.left:
             next = root.left
             while root:
@@ -19,6 +19,6 @@ class Solution:
                     root.right.next = root.next.left
                 root = root.next
             root = next
-        return p
+        return origin
             
                 
