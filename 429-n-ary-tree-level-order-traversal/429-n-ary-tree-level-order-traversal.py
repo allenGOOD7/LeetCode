@@ -8,22 +8,21 @@ class Node:
 
 class Solution:
     def levelOrder(self, root: 'Node') -> List[List[int]]:
-        if not root:
+        if(root == None):
             return []
-        res = []
-        res.append([root.val])
-        
-        def dfs(root, level):
-            if not root:
-                return 
-            for node in root:
-                if len(res) <= level:
-                    res.append([node.val])
-                else:
-                    res[level].append(node.val)
-                dfs(node.children, level + 1)
-        
-        if root.children:
-            dfs(root.children, 1)
-            
-        return res
+
+        op =[]
+        nodeToTraverse= [root]
+
+        while(len(nodeToTraverse)>0):
+            n = len(nodeToTraverse)
+            op.append([])
+
+            for i in range(n):
+                node = nodeToTraverse.pop(0)
+                if(node != None):
+                    op[-1].append(node.val)
+
+                for child in node.children:
+                    nodeToTraverse.append(child)
+        return op
