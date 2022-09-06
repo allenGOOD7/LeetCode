@@ -8,21 +8,18 @@ class Node:
 
 class Solution:
     def levelOrder(self, root: 'Node') -> List[List[int]]:
-        if(root == None):
+        if not root:
             return []
-
-        op =[]
-        nodeToTraverse= [root]
-
-        while(len(nodeToTraverse)>0):
-            n = len(nodeToTraverse)
-            op.append([])
-
-            for i in range(n):
-                node = nodeToTraverse.pop(0)
-                if(node != None):
-                    op[-1].append(node.val)
-
+        
+        res = []
+        queue = [root]
+        
+        while queue:
+            res.append([])
+            for i in range(len(queue)):
+                node = queue.pop(0)
+                res[-1].append(node.val)
+                
                 for child in node.children:
-                    nodeToTraverse.append(child)
-        return op
+                    queue.append(child)
+        return res
