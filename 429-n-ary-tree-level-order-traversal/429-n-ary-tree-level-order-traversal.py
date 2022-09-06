@@ -20,7 +20,6 @@ class Solution:
                 if len(res) <= level:
                     res.append([node.val])
                 else:
-                    # print(res, node.val, level)
                     res[level].append(node.val)
                 dfs(node.children, level + 1)
         
