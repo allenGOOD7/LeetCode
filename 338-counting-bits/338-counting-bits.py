@@ -10,9 +10,11 @@ class Solution:
         Base 2: 11101  Base 10: 29
         """             
         dp = [0]
-        for i in range (1, n + 1):
-            if i % 2 == 1:
-                dp.append(dp[i-1] + 1)
-            else:
-                dp.append(dp[i//2])
+        # for i in range (1, n + 1):
+        #     if i % 2 == 1:
+        #         dp.append(dp[i-1] + 1)
+        #     else:
+        #         dp.append(dp[i//2])
+        for i in range(1, n + 1):
+            dp.append(dp[i // 2] + i % 2)
         return dp
