@@ -15,14 +15,21 @@ class Solution:
         
 #         return "".join(arr)
             
-        res = ""
-        head = tail = 0
-        while tail < len(s):
-            if s[tail] == " ":
-                res += s[head:tail][::-1]
-                res += " "
-                head = tail + 1
-            tail += 1
+#         res = ""
+#         head = tail = 0
+#         while tail < len(s):
+#             if s[tail] == " ":
+#                 res += s[head:tail][::-1]
+#                 res += " "
+#                 head = tail + 1
+#             tail += 1
         
-        res += s[head:len(s)][::-1]
-        return res
+#         res += s[head:len(s)][::-1]
+#         return res
+    
+        res = ""
+        s = s.split(" ")
+        for string in s:
+            res += " "
+            res += string[::-1]
+        return res[1:]
