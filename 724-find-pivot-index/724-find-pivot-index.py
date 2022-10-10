@@ -5,8 +5,8 @@ class Solution:
         
         for index, num in enumerate(nums):
             right -= num
-            if left == right:
+            if right == left:
                 return index
             left += num
-        
-        return -1    
+            
+        return -1
