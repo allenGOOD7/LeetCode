@@ -14,7 +14,7 @@ class Solution:
         
     def dfs(self, root, path):       
         if not root:
-            return 0
+            return 
         if not root.left and not root.right:
             self.res += (path * 10 + root.val)
         self.dfs(root.left, path * 10 + root.val)
