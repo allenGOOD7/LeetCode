@@ -8,9 +8,6 @@ class Solution:
             
         for i in range(1, len(grid)):
             for j in range(1, len(grid[0])):
-                if grid[i - 1][j] >= grid[i][j - 1]:
-                    grid[i][j] += grid[i][j - 1]
-                else:
-                    grid[i][j] += grid[i - 1][j]
+                grid[i][j] += min(grid[i][j - 1], grid[i - 1][j])
 
         return grid[-1][-1]
